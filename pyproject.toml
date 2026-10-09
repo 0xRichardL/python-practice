@@ -1,0 +1,16 @@
+[project]
+name = "python-practice"
+version = "0.1.0"
+description = "A Python learning workspace"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=9,<10", "ruff>=0.16,<0.17"]
+
+[tool.ruff]
+target-version = "py314"
+
+[tool.ruff.lint]
+extend-select = ["B", "I", "UP"]
