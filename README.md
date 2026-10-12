@@ -34,6 +34,10 @@ contains a Python-specific guide and a fresh progress log.
 
 ## Conventions
 
+- Name code and learning material files with lowercase snake_case, such as
+  `main.py`, `test_main.py`, and `values_and_names.md`. Learning guide and
+  progress files keep their paired `<TOPIC>_GUIDE.md` and
+  `<TOPIC>_PROGRESS.md` names for the learning skills.
 - Put each standalone demo or problem in its own directory with `main.py`.
 - Keep reusable functions importable and put `test_*.py` files beside them.
 - Use pytest for tests and the standard library for exercise code. Add runtime
