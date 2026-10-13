@@ -12,7 +12,7 @@ uv run --locked python
 
 At the `>>>` prompt, type Python code **without** the prompt characters:
 
-```pycon
+```text
 >>> 2 + 3
 5
 >>> message = "hello"
