@@ -51,19 +51,19 @@ Each estimate includes a short recall of earlier material, hands-on application,
 | LG-04 | Functions | Split a small task into functions with clear inputs and outputs. | `def`, `return`, positional and keyword arguments, defaults, local scope, simple annotations, mutable-default pitfall. | Refactor the classifier into two functions; call with positional and keyword arguments, fix a mutable-default example, and explain each returned value. | 2 h |
 | LG-05 | Collections | Choose and update a suitable collection for a task list. | List order, tuple immutability, dict key lookup, set uniqueness, indexing/slicing, iteration, `zip`, simple comprehensions. | Model three tasks as dictionaries in a list; add, find, and mark one done; explain why a set is unsuitable for ordered task records and whether a slice shares nested objects. | 3 h |
 | LG-06 | Errors and text files | Read a UTF-8 file and report a specific failure clearly. | `try`/`except`, `else`/`finally` at a recognition level, `with`, `pathlib.Path`, explicit encoding, missing versus malformed input. | Write a tiny text reader; handle a missing file and malformed content separately; confirm the file is closed and errors are not silently swallowed. | 0.5 h |
-| LG-07 | Modules, CLI, and JSON | Run a module with arguments and round-trip task data through JSON. | `import`, `__name__ == "__main__"`, `argparse`, `json.load`/`dump`, JSON-compatible values, exit status. | Start `concepts/basics/task_list/main.py`; parse one command, save and load a list of tasks, run it as a script and with `python -m concepts.basics.task_list.main`; explain where imports come from. | 2.5 h |
-| LG-08 | Build one task-list CLI | Build a usable JSON-backed task-list program. | Combine functions, collections, paths, JSON, CLI parsing, and specific errors; keep business logic importable. | In the same directory, implement `add`, `list`, and `done`; persist across runs; show help and a clear error for malformed JSON; write nearby `test_*.py` cases for a normal path and a failure path. | 5 h |
-| LG-09 | Recall and debug | Explain and repair the program without a finished solution. | Retrieval, tracing, boundary cases, and documentation lookup. | From memory, explain data flow from CLI to JSON and back; test empty list, repeated `done`, and missing file; deliberately introduce then fix one bug; rerun focused tests and `make check`. | 3 h |
+| LG-07 | Modules, CLI, and JSON | Run a module with arguments and round-trip task data through JSON. | `import`, `__name__ == "__main__"`, `argparse`, `json.load`/`dump`, JSON-compatible values, exit status. | Start `concepts/basics/task_list/main.py` with one `add` command; save and load one task, then run the same program as a script and with `python -m concepts.basics.task_list.main`. | 1.5 h |
+| LG-08 | Build one task-list CLI | Build a usable JSON-backed task-list program. | Combine functions, collections, paths, JSON, CLI parsing, and specific errors; keep business logic importable. | Extend LG-07 with `list` and `done`; check persistence, help, and a clear malformed-JSON error; write one normal-path and one failure-path test nearby. | 3 h |
+| LG-09 | Recall and debug | Explain and repair the program without a finished solution. | Retrieval, tracing, boundary cases, and documentation lookup. | Explain CLI-to-JSON data flow from memory; check empty list, repeated `done`, and missing file; fix one observed or deliberately introduced bug, then rerun focused tests and `make check`. | 1.5 h |
 
-**Planned total:** 22 hours (Day 1: LG-01–LG-04, 8 h; Day 2: LG-05–LG-07, 6 h; Day 3: LG-08–LG-09, 8 h).
+**Planned total:** 17.5 hours (Day 1: LG-01–LG-04, 8 h; Day 2: LG-05–LG-07, 5 h; Day 3: LG-08–LG-09, 4.5 h). LG-07–LG-09 are focused implementation blocks that reuse earlier work; extend a block if its mastery evidence is not met.
 
 ## Milestones
 
 | Milestone | Units | Cumulative time | Evidence |
 | --- | --- | ---: | --- |
 | Day 1: core syntax | LG-01–LG-04 | 8 h | Run code and explain values, branching, loops, and function calls. |
-| Day 2: data boundaries | LG-05–LG-07 | 14 h | Model tasks in collections and round-trip them through a CLI and JSON file. |
-| Day 3: independent tool | LG-08–LG-09 | 22 h | The task-list CLI works across runs, passes normal and failure tests, and you can explain and debug it. |
+| Day 2: data boundaries | LG-05–LG-07 | 13 h | Model tasks in collections and round-trip them through a CLI and JSON file. |
+| Day 3: independent tool | LG-08–LG-09 | 17.5 h | The task-list CLI works across runs, passes normal and failure tests, and you can explain and debug it. |
 
 ## Compact reference
 
@@ -99,4 +99,4 @@ Each estimate includes a short recall of earlier material, hands-on application,
 
 ## Research limits
 
-- The 22-hour plan is an instructional estimate, not a guarantee of mastery; the full Level 1 checklist needs additional practice. Python 3.14 and tool behavior should be checked against the pinned repository files if they change.
+- The 17.5-hour plan is an instructional estimate within the 22-hour budget, not a guarantee of mastery; the full Level 1 checklist needs additional practice. Python 3.14 and tool behavior should be checked against the pinned repository files if they change.
