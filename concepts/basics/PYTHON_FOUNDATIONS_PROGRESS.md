@@ -1,6 +1,6 @@
 # Learning Progress: Python Foundations
 
-> Guide: [PYTHON_FOUNDATIONS_GUIDE.md](./PYTHON_FOUNDATIONS_GUIDE.md)
+> Guide: [PYTHON_FOUNDATIONS_GUIDE.md](./PYTHON_FOUNDATIONS_GUIDE.md), version 2
 > Last updated: 2026-10-16
 
 ## Status
@@ -9,6 +9,7 @@
 | --- | --- |
 | Overall status | in progress |
 | Accumulated reported active time | 0 minutes reported; actual time unknown |
+| Plan and budget | 17.5 hours planned across LG-01–LG-09; 22-hour active-learning budget, with 4.5 hours unallocated in the plan; actual time remaining is unknown |
 | Current unit | LG-07 — Modules, CLI, and JSON (in progress) |
 
 ## Unit checklist
@@ -38,11 +39,11 @@
 
 ### Exact next action
 
-> Ask for available active-learning time. Start with one direct application of the `ArgumentParser` demo: identify the parsed values, run `--help` and a missing-argument case, and explain the exit status. Then build one guarded `add` command that saves and loads a task; run it by file path and `python -m`. Do not repeat the demonstrated module-guard check.
+> Ask for available active-learning time. Start with one direct application of the `ArgumentParser` demo: identify the parsed values, run `--help` and a missing-argument case, and explain each exit status. Then build one guarded `add` command that saves and loads a task; run it by file path and `python -m`. Do not repeat the demonstrated module-guard check.
 
 ## Adaptations
 
-- The learner shortened LG-06 from 2.5 hours to 30 minutes because the original estimate was too long. The guide now plans 22 hours total; mastery evidence stayed the same.
+- The learner shortened LG-06 from 2.5 hours to 30 minutes because the original estimate was too long. The guide now plans 17.5 hours within the 22-hour budget; the LG-06 mastery evidence stayed the same.
 - Teach the rule and a complete example before learner code. Prepare focused exercise files, use short scenario checks, avoid repeat quizzes, and provide documentation answers directly unless source-finding practice is requested.
 - LG-02 was extended at the learner's request: one direct-run file per type, numbered cases, separated output, and explanatory comments. Its mastery evidence remains valid.
 - Keep the LG-04 note and direct-run exercise in `concepts/basics/functions/`; the learner does not plan to import that exercise.
@@ -51,6 +52,7 @@
 - For LG-07, the learner has 2 hours available and prefers extra focus on saving and loading JSON.
 - The learner asked for basic knowledge before code or documentation and separate folders/files for JSON, modules, and CLI arguments. The premature integrated task-list scaffold and combined note were replaced by focused concept demos.
 - For CLI arguments, explain `ArgumentParser` creation, `add_argument`, and `parse_args` with a complete example before asking the learner to infer parsed values.
+- Guide version 2 makes knowledge and mastery evidence explicit, pins Python documentation to 3.14, and treats the original three-day grouping as optional. Unit IDs and recorded completion evidence remain unchanged. Supply relevant documentation and ask for application rather than assigning a documentation search.
 
 ## Session log
 
