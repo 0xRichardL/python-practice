@@ -5,13 +5,13 @@
       "source": "0xRichardL/skills",
       "sourceType": "github",
       "skillPath": "skills/build-learning-guide/SKILL.md",
-      "computedHash": "08d6ae763885ce425e50f993558cb5a0bb32d284d502895a896e0beaf91a08dd"
+      "computedHash": "a2f8f844b7364e2b4df9e529068a38f2c2a8a6527ecab646bc6acc7d86cd8e3e"
     },
     "run-learning-guide": {
       "source": "0xRichardL/skills",
       "sourceType": "github",
       "skillPath": "skills/run-learning-guide/SKILL.md",
-      "computedHash": "3ac72e422739036dbcf768034b7a9bb008acae07eaec7a9701a683509df1c6e1"
+      "computedHash": "3a0a183f7179ff85f1a3d7145daa64cc8b72e7f6d0c372fc901464a1db57b874"
     }
   }
 }
