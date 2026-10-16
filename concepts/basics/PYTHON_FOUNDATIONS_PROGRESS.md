@@ -1,7 +1,7 @@
 # Learning Progress: Python Foundations
 
 > Guide: [PYTHON_FOUNDATIONS_GUIDE.md](./PYTHON_FOUNDATIONS_GUIDE.md)
-> Last updated: 2026-10-15
+> Last updated: 2026-10-16
 
 ## Status
 
@@ -9,7 +9,7 @@
 | --- | --- |
 | Overall status | in progress |
 | Accumulated reported active time | 0 minutes reported; actual time unknown |
-| Current unit | LG-07 — Modules, CLI, and JSON (not started) |
+| Current unit | LG-07 — Modules, CLI, and JSON (in progress) |
 
 ## Unit checklist
 
@@ -19,7 +19,7 @@
 - [x] LG-04 — Functions — completed
 - [x] LG-05 — Collections — completed
 - [x] LG-06 — Errors and text files — completed
-- [ ] LG-07 — Modules, CLI, and JSON — not started
+- [ ] LG-07 — Modules, CLI, and JSON — in progress
 - [ ] LG-08 — Build one task-list CLI — not started
 - [ ] LG-09 — Recall and debug — not started
 
@@ -30,14 +30,15 @@
 - LG-01–LG-04: Ran Python in the workspace; explained values, names, aliasing, and types; wrote and checked loops, a classifier, functions, and a mutable-default fix.
 - LG-05: Added, found, and updated task dictionaries in `collections/list_type.py`; explained collection choice, shallow slices, `zip`, and `enumerate`. The focused demo and Ruff checks passed.
 - LG-06: Added specific missing-file, decode, and malformed-integer handlers to `errors_and_text_files/main.py`. The reader reports all three prepared cases and continues after errors. The learner explained `with` cleanup and `else`/`finally`; the script and Ruff checks passed.
+- LG-07 so far: The learner's `json/main.py` encodes and decodes a task list, then loads, appends, and saves task data. The learner corrected the malformed-JSON handler to return before writing. A temporary-file check confirmed damaged data stays unchanged and a missing file creates one task; Ruff passed. The learner explained that file-path and `-m` runs make the module the entry point, while importing it skips the guarded `main()` call and permits an explicit function call.
 
 ### Open or fragile knowledge
 
-- None unresolved. LG-07 has not started.
+- None unresolved from prior units. In LG-07, `ArgumentParser`, `add_argument`, and `parse_args` were explained, but the learner has not yet applied them. The integrated `add` command and its script/`-m` runs are not started. The missing-file message says "skipped" even though the JSON demo creates a new file; this is a wording cleanup.
 
 ### Exact next action
 
-> Ask for available active-learning time, then start LG-07 with a guarded module, one CLI command, and a JSON round trip. Do not repeat completed-unit checks.
+> Ask for available active-learning time. Start with one direct application of the `ArgumentParser` demo: identify the parsed values, run `--help` and a missing-argument case, and explain the exit status. Then build one guarded `add` command that saves and loads a task; run it by file path and `python -m`. Do not repeat the demonstrated module-guard check.
 
 ## Adaptations
 
@@ -47,6 +48,9 @@
 - Keep the LG-04 note and direct-run exercise in `concepts/basics/functions/`; the learner does not plan to import that exercise.
 - LG-05 uses separate runnable collection files. The aggregate collection and values-and-names demos were removed at the learner's request; task-search code remains in `collections/list_type.py`. Its append already counted as add evidence, and `zip` was taught before quizzing it.
 - An LG-05 deferral from a separate session was recorded here by mistake. The learner clarified that this chat's LG-05 work was active; its evidence was retained and the unit was completed.
+- For LG-07, the learner has 2 hours available and prefers extra focus on saving and loading JSON.
+- The learner asked for basic knowledge before code or documentation and separate folders/files for JSON, modules, and CLI arguments. The premature integrated task-list scaffold and combined note were replaced by focused concept demos.
+- For CLI arguments, explain `ArgumentParser` creation, `add_argument`, and `parse_args` with a complete example before asking the learner to infer parsed values.
 
 ## Session log
 
@@ -81,3 +85,11 @@
 ### Session 8 — 2026-10-15
 
 - Planned: 30 minutes; actual active time: not reported. LG-06 completed with a UTF-8 text reader that reports missing and malformed files separately. The learner explained `with` cleanup and the `else`/`finally` behavior. The focused script and Ruff checks pass. The LG-06 estimate and guide total were updated at the learner's request.
+
+### Session 9 — 2026-10-15
+
+- Planned: 2 hours; actual active time: not reported. LG-07 began with extra attention to JSON. At the learner's request, modules, CLI arguments, and JSON gained separate concept notes and runnable demos. The learner practiced JSON string and file conversion; the premature integrated task-list scaffold was removed while component basics were taught.
+
+### Session 10 — 2026-10-16
+
+- Planned: 60 minutes; actual active time: not reported. The learner fixed the malformed-JSON fallthrough; temporary-file checks confirmed the corrupt file is preserved and a missing file starts a task list. The learner correctly explained file-path and `-m` entry points and why an import skips guarded code. `ArgumentParser` basics were explained, but no CLI application answer or integrated `add` command was completed. The learner paused the session here.
