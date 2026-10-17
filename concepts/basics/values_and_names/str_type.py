@@ -36,8 +36,8 @@ print("  composed length:", len(composed))
 print("  decomposed length:", len(decomposed))
 print("  equal before normalization:", composed == decomposed)
 print(
-    "  equal after NFC normalization:",
-    composed == unicodedata.normalize("NFC", decomposed),
+  "  equal after NFC normalization:",
+  composed == unicodedata.normalize("NFC", decomposed),
 )
 print("  casefold match:", "Straße".casefold() == "STRASSE".casefold())
 print("  escaped newline shown with repr:", repr("a\nb"))
@@ -45,26 +45,26 @@ print("  escaped newline shown with repr:", repr("a\nb"))
 # The expected errors are caught to keep the demonstration running.
 print("\nCase 04: immutable text and incompatible types")
 try:
-    text[0] = "C"
+  text[0] = "C"
 except TypeError as error:
-    print("  assigning text[0] raises:", type(error).__name__)
+  print("  assigning text[0] raises:", type(error).__name__)
 
 try:
-    text + 1
+  text + 1
 except TypeError as error:
-    print("  text + 1 raises:", type(error).__name__)
+  print("  text + 1 raises:", type(error).__name__)
 
 # join can combine only str items; convert non-text values first if needed.
 print("\nCase 05: indexing and join failures")
 try:
-    text[99]
+  text[99]
 except IndexError as error:
-    print("  text[99] raises:", type(error).__name__)
+  print("  text[99] raises:", type(error).__name__)
 
 try:
-    mixed_parts = ["a", 1]
-    ",".join(mixed_parts)
+  mixed_parts = ["a", 1]
+  ",".join(mixed_parts)
 except TypeError as error:
-    print("  join with an int raises:", type(error).__name__)
+  print("  join with an int raises:", type(error).__name__)
 
 # Try: compare `str(1) + text` with `f"{1}{text}"`.

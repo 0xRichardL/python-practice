@@ -1,10 +1,10 @@
 # This default list is created once, so calls that omit items share it.
 def remember_with_shared_default(
-    item: str,
-    items: list[str] = [],  # noqa: B006 - intentional example
+  item: str,
+  items: list[str] = [],  # noqa: B006 - intentional example
 ) -> list[str]:
-    items.append(item)
-    return items
+  items.append(item)
+  return items
 
 
 shared_first = remember_with_shared_default("read")
@@ -17,11 +17,11 @@ print(f"same list: {shared_first is shared_second}")
 
 
 def remember_with_fresh_list(item: str, items: list[str] | None = None) -> list[str]:
-    # None means no list was supplied; create one for this call.
-    if items is None:
-        items = []
-    items.append(item)
-    return items
+  # None means no list was supplied; create one for this call.
+  if items is None:
+    items = []
+  items.append(item)
+  return items
 
 
 fresh_first = remember_with_fresh_list("read")

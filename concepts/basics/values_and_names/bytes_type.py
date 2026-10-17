@@ -28,37 +28,37 @@ print("  str(encoded):", str(encoded))
 # Strict decoding reports invalid UTF-8. Replacement continues but loses data.
 print("\nCase 04: decoding failure and replacement")
 try:
-    b"\xff".decode("utf-8")
+  b"\xff".decode("utf-8")
 except UnicodeDecodeError as error:
-    print("  invalid UTF-8 raises:", type(error).__name__)
+  print("  invalid UTF-8 raises:", type(error).__name__)
 print(
-    "  decoding with errors='replace':",
-    b"\xff".decode("utf-8", errors="replace"),
+  "  decoding with errors='replace':",
+  b"\xff".decode("utf-8", errors="replace"),
 )
 
 # bytes cannot be mixed with str directly or changed in place.
 print("\nCase 05: incompatible types and values")
 try:
-    encoded + "!"
+  encoded + "!"
 except TypeError as error:
-    print("  bytes + str raises:", type(error).__name__)
+  print("  bytes + str raises:", type(error).__name__)
 
 try:
-    encoded[0] = 65
+  encoded[0] = 65
 except TypeError as error:
-    print("  changing encoded[0] raises:", type(error).__name__)
+  print("  changing encoded[0] raises:", type(error).__name__)
 
 try:
-    bytes([256])
+  bytes([256])
 except ValueError as error:
-    print("  bytes([256]) raises:", type(error).__name__)
+  print("  bytes([256]) raises:", type(error).__name__)
 
 # ASCII cannot encode é; UTF-8 can.
 print("\nCase 06: encoding failure")
 try:
-    text.encode("ascii")
+  text.encode("ascii")
 except UnicodeEncodeError as error:
-    print("  encoding café as ASCII raises:", type(error).__name__)
+  print("  encoding café as ASCII raises:", type(error).__name__)
 
 # Try: decode b"\xff" with errors="replace". What information is lost?
 # A bytes literal may contain ASCII characters or escapes, but not literal "é".

@@ -33,17 +33,17 @@ print("\nCase 04: zero and invalid integer text")
 print("  bool(0):", bool(0))
 
 try:
-    int("12.5")
+  int("12.5")
 except ValueError as error:
-    print("  int('12.5') raises:", type(error).__name__)
+  print("  int('12.5') raises:", type(error).__name__)
 
 # The expected exception is caught so the rest of this script remains runnable.
 print("\nCase 05: division by zero")
 try:
-    numerator = 5
-    denominator = 0
-    result = numerator // denominator
+  numerator = 5
+  denominator = 0
+  result = numerator // denominator
 except ZeroDivisionError as error:
-    print("  5 // 0 raises:", type(error).__name__)
+  print("  5 // 0 raises:", type(error).__name__)
 
 # Try: change -5 // 2 to -5 // 3 and compare it with int(-5 / 3).

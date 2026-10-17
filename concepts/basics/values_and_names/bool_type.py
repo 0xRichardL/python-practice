@@ -34,7 +34,7 @@ print("  [] and ['unused']:", empty_list and ["unused"])
 
 
 def would_fail():
-    raise RuntimeError("This function should not run")
+  raise RuntimeError("This function should not run")
 
 
 # The right side is skipped once the left side determines the result.

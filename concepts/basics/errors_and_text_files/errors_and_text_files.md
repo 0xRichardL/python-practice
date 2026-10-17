@@ -14,14 +14,14 @@ from pathlib import Path
 
 path = Path("number.txt")
 try:
-    with path.open("r", encoding="utf-8") as file:
-        number = int(file.read().strip())
+  with path.open("r", encoding="utf-8") as file:
+    number = int(file.read().strip())
 except FileNotFoundError:
-    print(f"Missing file: {path}")
+  print(f"Missing file: {path}")
 except ValueError:
-    print(f"Expected one integer in: {path}")
+  print(f"Expected one integer in: {path}")
 else:
-    print(number)
+  print(number)
 ```
 
 `else` runs only when the `try` block succeeds. `finally` runs on both success and failure; it is useful for cleanup that is not already managed by `with`. The file closes before either `except` or `else` runs.

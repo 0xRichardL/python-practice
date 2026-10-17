@@ -43,15 +43,15 @@ print("  sign of -0.0:", math.copysign(1.0, -0.0))
 # Python raises for division by zero and text that is not a float literal.
 print("\nCase 05: invalid operations and input")
 try:
-    numerator = 1.0
-    denominator = 0.0
-    result = numerator / denominator
+  numerator = 1.0
+  denominator = 0.0
+  result = numerator / denominator
 except ZeroDivisionError as error:
-    print("  1.0 / 0.0 raises:", type(error).__name__)
+  print("  1.0 / 0.0 raises:", type(error).__name__)
 
 try:
-    float("not a number")
+  float("not a number")
 except ValueError as error:
-    print("  invalid float text raises:", type(error).__name__)
+  print("  invalid float text raises:", type(error).__name__)
 
 # Try: compare 0.1 + 0.2 with 0.3 using a chosen abs_tol in math.isclose.

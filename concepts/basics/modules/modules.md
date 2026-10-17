@@ -13,11 +13,11 @@ under the guard so an import can access functions without starting the program:
 
 ```python
 def greet(name: str) -> str:
-    return f"Hello, {name}"
+  return f"Hello, {name}"
 
 
 if __name__ == "__main__":
-    print(greet("Ada"))
+  print(greet("Ada"))
 ```
 
 `python path/to/main.py` runs a file by path. `python -m package.module` finds

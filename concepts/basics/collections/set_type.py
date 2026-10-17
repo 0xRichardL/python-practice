@@ -9,9 +9,9 @@ labels.add("urgent")
 print("after add:", labels)
 
 try:
-    labels.add({"title": "plan", "done": False})
+  labels.add({"title": "plan", "done": False})
 except TypeError as error:
-    print("dictionary cannot be a set item:", type(error).__name__)
+  print("dictionary cannot be a set item:", type(error).__name__)
 
 labels.add("home")
 print("size after adding home doesn't change:", len(labels))

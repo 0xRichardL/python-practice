@@ -2,12 +2,12 @@
 
 
 def module_name() -> str:
-    return __name__
+  return __name__
 
 
 def main() -> None:
-    print("This module's name:", module_name())
+  print("This module's name:", module_name())
 
 
 if __name__ == "__main__":
-    main()
+  main()

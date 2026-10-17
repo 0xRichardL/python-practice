@@ -7,11 +7,11 @@ Python runs a block when its condition is true. Indentation defines the block. A
 ```python
 number = 0
 if number < 0:
-    label = "negative"
+  label = "negative"
 elif number == 0:
-    label = "zero"
+  label = "zero"
 else:
-    label = "positive"
+  label = "positive"
 ```
 
 Order matters: a broad condition placed first can hide a later, more specific one. An empty iterable runs a `for` body zero times. A `while` condition that never becomes false needs an intentional `break` or another exit.
@@ -29,7 +29,7 @@ Order matters: a broad condition placed first can hide a later, more specific on
 
 ```python
 for item in ["read", "write"]:
-    print(item)
+  print(item)
 print("finished")
 ```
 
@@ -57,13 +57,13 @@ A positive step produces values below `stop`; a negative step produces values ab
 
 ```python
 for attempt in range(1, 4):  # 1, 2, 3; the stop value 4 is excluded
-    print(attempt)
+  print(attempt)
 
 count = 0
 while count < 3:  # Check before each repetition.
-    count += 1  # Change state so the loop can finish.
-    if count == 2:
-        break  # Leave this loop immediately.
+  count += 1  # Change state so the loop can finish.
+  if count == 2:
+    break  # Leave this loop immediately.
 ```
 
 The `while` example reaches `count == 2` and exits; it never reaches 3. A `while` loop whose condition stays true can run forever. When the number of repetitions is already known, `for` with `range` is usually clearer.
@@ -74,11 +74,11 @@ For a list, indices start at 0. The condition `index < len(items)` keeps an inde
 animals = ["cat", "dog", "bird"]
 index = 0
 while index < len(animals):
-    animal = animals[index]
-    if animal == "dog":
-        print(f"Found at position {index + 1}")
-        break
-    index += 1
+  animal = animals[index]
+  if animal == "dog":
+    print(f"Found at position {index + 1}")
+    break
+  index += 1
 ```
 
 This prints `Found at position 2`. With an empty list, the condition is false immediately, so the body never tries to index it. Without a match, the index eventually reaches the list length and the loop finishes.
@@ -86,7 +86,7 @@ This prints `Found at position 2`. With an empty list, the condition is false im
 ```python
 tasks = ["read", "write"]
 for number, task in enumerate(tasks, start=1):
-    print(f"{number}. {task}")
+  print(f"{number}. {task}")
 ```
 
 An empty `tasks` list prints nothing. If output is required for that case, handle it explicitly.

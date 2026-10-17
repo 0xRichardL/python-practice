@@ -22,8 +22,8 @@ print("  None == False:", missing == false_value)
 
 
 def no_explicit_return():
-    # Reaching the end of a function is equivalent to returning None.
-    pass
+  # Reaching the end of a function is equivalent to returning None.
+  pass
 
 
 print("\nCase 03: implicit return")
@@ -39,8 +39,8 @@ print("  append result:", append_result)
 # These try/except blocks let the demo report an expected error and continue.
 print("\nCase 05: unsupported ordering")
 try:
-    comparison = missing < zero
+  comparison = missing < zero
 except TypeError as error:
-    print("  None < 0 raises:", type(error).__name__)
+  print("  None < 0 raises:", type(error).__name__)
 
 # Try: replace `missing` with 0. Which printed checks change?

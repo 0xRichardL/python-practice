@@ -24,20 +24,20 @@ print("only copied list changed:", copied)
 
 # Search task dictionaries by title, then update the matching object.
 search_tasks = [
-    {"title": "plan", "done": False},
-    {"title": "write", "done": False},
-    {"title": "review", "done": True},
+  {"title": "plan", "done": False},
+  {"title": "write", "done": False},
+  {"title": "review", "done": True},
 ]
 found = False
 for task in search_tasks:
-    if task["title"] == "write":
-        found = True
-        task["done"] = True
-        break
+  if task["title"] == "write":
+    found = True
+    task["done"] = True
+    break
 
 print("after search and update:", search_tasks)
 if not found:
-    print("not found")
+  print("not found")
 
 unfinished = [task["title"] for task in search_tasks if not task["done"]]
 

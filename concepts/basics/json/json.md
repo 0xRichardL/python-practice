@@ -45,10 +45,10 @@ To persist data, open a text file with UTF-8 encoding and use `json.dump` or
 
 ```python
 with path.open("w", encoding="utf-8") as file:
-    json.dump(tasks, file, indent=2)
+  json.dump(tasks, file, indent=2)
 
 with path.open("r", encoding="utf-8") as file:
-    loaded_tasks = json.load(file)
+  loaded_tasks = json.load(file)
 ```
 
 `"w"` creates or replaces the file; `"r"` reads an existing file. Saving a
