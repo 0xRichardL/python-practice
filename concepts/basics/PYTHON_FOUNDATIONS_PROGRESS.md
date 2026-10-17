@@ -10,7 +10,7 @@
 | Overall status | in progress |
 | Known active time | About 2 hours on 2026-10-17; earlier sessions' actual time is unknown |
 | Plan and budget | 17.5 hours planned across LG-01–LG-09; 22-hour active-learning budget, with 4.5 hours unallocated in the plan; actual time remaining is unknown |
-| Current unit | LG-08 — Build one task-list CLI (not started) |
+| Current unit | LG-09 — Recall and debug (not started) |
 
 ## Unit checklist
 
@@ -21,7 +21,7 @@
 - [x] LG-05 — Collections — completed
 - [x] LG-06 — Errors and text files — completed
 - [x] LG-07 — Modules, CLI, and JSON — completed
-- [ ] LG-08 — Build one task-list CLI — not started
+- [x] LG-08 — Build one task-list CLI — completed
 - [ ] LG-09 — Recall and debug — not started
 
 ## Completed-unit evidence
@@ -35,13 +35,15 @@
 | LG-05 | Added, searched, and updated task dictionaries; explained collection choices, shallow slices, `zip`, `enumerate`, and a comprehension (Session 7). |
 | LG-06 | Built a UTF-8 number reader with specific file, decode, and value-error handlers; explained `with`, `else`, and `finally`. The prior invalid-UTF-8 check lacks a retained fixture (Session 8). |
 | LG-07 | Explained import versus guarded execution, parsed values, `choices`, and help/error exit statuses. Built `add_task(path, title)` with JSON persistence. Temporary-copy checks passed imported use, file-path and `-m` runs, clean help, missing-title error, and corrupt-file preservation; Ruff passed (Sessions 9–11). |
+| LG-08 | Built `add`, numbered `list`, and one-based `done` operations. Temporary-copy checks passed separate-run persistence, help, invalid-number errors, and malformed-JSON preservation. Three nearby pytest tests use `tmp_path` for normal persistence, out-of-range handling, and corrupt-file preservation; focused pytest and Ruff lint/format passed (Session 13). |
 
 ## Current checkpoint
 
-- **Completed:** LG-07. Its `add TITLE` code and explanation meet the guide's mastery evidence.
-- **Open check:** Replay LG-06 with an invalid-UTF-8 temporary file before closing the data-boundary milestone. This does not reopen LG-06.
-- **Next action:** Run the LG-06 invalid-UTF-8 check, then begin LG-08 with `list` and `done` operations. Teach in short turns with a rule and working example before learner code; do not send a question and wait.
-- **Separate housekeeping:** `json/main.py` calls a missing file "skipped" although it creates one; `run_workspace/run_workspace.md` links to the wrong relative `main.py` path. These do not block LG-08.
+- **Completed:** LG-08. The CLI works across separate runs, handles malformed JSON without overwriting it, and has passing normal and failure tests.
+- **Completed check:** Replayed LG-06 with a temporary invalid-UTF-8 file; `read_number()` raised `UnicodeDecodeError` as expected. This did not reopen LG-06.
+- **LG-08 verification:** Temporary-copy checks passed help, `add`, `list`, `done 1`, separate-run JSON persistence, non-integer and out-of-range errors (status 2), and malformed-JSON preservation (status 1). The real `tasks.json` includes a learner change marking its first task done; preserve it.
+- **Next action:** Begin LG-09 with a from-memory explanation of the CLI-to-JSON flow. Then check empty-list, repeated-`done`, and missing-file behavior, trace and fix one observed or introduced bug, rerun focused tests and `make check`.
+- **Separate housekeeping:** `json/main.py` calls a missing file "skipped" although it creates one; `run_workspace/run_workspace.md` links to the wrong relative `main.py` path. These do not block the guide.
 
 ## Adaptations
 
@@ -58,6 +60,7 @@
 - The learner pointed out that `choices` had not been taught before the task-list instructions used it. The CLI note and runnable demo now teach a two-value choice, its default, and the invalid-choice error before task-list use.
 - The learner requested short teaching turns without questions that leave the assistant waiting for a reply. Present the next concept and exact action directly, then continue when the learner returns.
 - Guide version 2 makes knowledge and mastery evidence explicit, pins Python documentation to 3.14, and treats the original three-day grouping as optional. Unit IDs and recorded completion evidence remain unchanged. Supply relevant documentation and ask for application rather than assigning a documentation search.
+- During LG-08, the learner clarified they had no testing knowledge; teach pytest basics with a working example before assigning the guide's two tests.
 
 ## Session log
 
@@ -106,3 +109,15 @@
 - Planned: 45 minutes initially, with a later 10-minute teaching window. Actual: about 2 hours active, excluding lunch. Session ended at the learner's request.
 - Covered `argparse` options, `choices`, parsed values, and exit statuses, with a complete JSON-backed CLI example before the exercise. The learner built `add_task(path, title)` and fixed malformed-JSON handling and help parsing order.
 - Temporary-copy checks passed imported use, file-path and `-m` persistence, help and error cases, corrupt-file preservation, and Ruff. LG-07 is complete. A separate LG-06 invalid-UTF-8 fixture check remains before the data-boundary milestone.
+
+### Session 12 — 2026-10-17
+
+- Planned: 1 hour; actual active time: not reported. LG-08 started and remains in progress.
+- Replayed the LG-06 invalid-UTF-8 check with a temporary file; `read_number()` raised `UnicodeDecodeError` as expected. Reviewed the current `add` implementation and created a concise LG-08 reference note.
+- Teaching pause: optional positional parsing and per-command validation were introduced. Next, the learner should adapt the parser and implement `list`; `done` and tests remain for later in the allocation.
+
+### Session 13 — 2026-10-17
+
+- Planned: continuation of the 1-hour LG-08 allocation; actual active time: not reported.
+- The learner built numbered `list` and one-based `done`, with separate conversion and range errors. Temporary-copy checks passed help, add/list/done across runs, invalid-number errors, and malformed-JSON preservation. The real `tasks.json` includes a learner change marking its first task done; it was preserved.
+- Pytest basics were taught at the learner's request. The learner wrote and refined three tests using `tmp_path` and `pytest.raises`; all 3 passed. Ruff lint and format checks passed for the task-list code and tests. LG-08 completed; LG-09 is next.
