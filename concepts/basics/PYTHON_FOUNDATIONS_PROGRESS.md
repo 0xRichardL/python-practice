@@ -1,16 +1,16 @@
 # Learning Progress: Python Foundations
 
 > Guide: [PYTHON_FOUNDATIONS_GUIDE.md](./PYTHON_FOUNDATIONS_GUIDE.md), version 2
-> Last updated: 2026-10-16
+> Last updated: 2026-10-17
 
 ## Status
 
 | Field | Value |
 | --- | --- |
 | Overall status | in progress |
-| Accumulated reported active time | 0 minutes reported; actual time unknown |
+| Known active time | About 2 hours on 2026-10-17; earlier sessions' actual time is unknown |
 | Plan and budget | 17.5 hours planned across LG-01–LG-09; 22-hour active-learning budget, with 4.5 hours unallocated in the plan; actual time remaining is unknown |
-| Current unit | LG-07 — Modules, CLI, and JSON (in progress) |
+| Current unit | LG-08 — Build one task-list CLI (not started) |
 
 ## Unit checklist
 
@@ -20,26 +20,28 @@
 - [x] LG-04 — Functions — completed
 - [x] LG-05 — Collections — completed
 - [x] LG-06 — Errors and text files — completed
-- [ ] LG-07 — Modules, CLI, and JSON — in progress
+- [x] LG-07 — Modules, CLI, and JSON — completed
 - [ ] LG-08 — Build one task-list CLI — not started
 - [ ] LG-09 — Recall and debug — not started
 
+## Completed-unit evidence
+
+| Unit | Learner evidence and verification |
+| --- | --- |
+| LG-01 | Ran REPL, script, and `-m` examples; explained the Python environment and workspace commands (Session 2). |
+| LG-02 | Explained six basic types, names and aliasing, equality versus identity, truthiness, encoding, and floating-point behavior; corrected quiz answers (Sessions 3 and 6). |
+| LG-03 | Wrote and traced conditionals and loops, including an indexed search and `break` (Session 4). |
+| LG-04 | Refactored a classifier into functions; explained arguments, return values, annotations, defaults, and the mutable-default pitfall (Session 5). |
+| LG-05 | Added, searched, and updated task dictionaries; explained collection choices, shallow slices, `zip`, `enumerate`, and a comprehension (Session 7). |
+| LG-06 | Built a UTF-8 number reader with specific file, decode, and value-error handlers; explained `with`, `else`, and `finally`. The prior invalid-UTF-8 check lacks a retained fixture (Session 8). |
+| LG-07 | Explained import versus guarded execution, parsed values, `choices`, and help/error exit statuses. Built `add_task(path, title)` with JSON persistence. Temporary-copy checks passed imported use, file-path and `-m` runs, clean help, missing-title error, and corrupt-file preservation; Ruff passed (Sessions 9–11). |
+
 ## Current checkpoint
 
-### Demonstrated evidence
-
-- LG-01–LG-04: Ran Python in the workspace; explained values, names, aliasing, and types; wrote and checked loops, a classifier, functions, and a mutable-default fix.
-- LG-05: Added, found, and updated task dictionaries in `collections/list_type.py`; explained collection choice, shallow slices, `zip`, and `enumerate`. The focused demo and Ruff checks passed.
-- LG-06: Added specific missing-file, decode, and malformed-integer handlers to `errors_and_text_files/main.py`. The reader reports all three prepared cases and continues after errors. The learner explained `with` cleanup and `else`/`finally`; the script and Ruff checks passed.
-- LG-07 so far: The learner's `json/main.py` encodes and decodes a task list, then loads, appends, and saves task data. The learner corrected the malformed-JSON handler to return before writing. A temporary-file check confirmed damaged data stays unchanged and a missing file creates one task; Ruff passed. The learner explained that file-path and `-m` runs make the module the entry point, while importing it skips the guarded `main()` call and permits an explicit function call.
-
-### Open or fragile knowledge
-
-- None unresolved from prior units. In LG-07, `ArgumentParser`, `add_argument`, and `parse_args` were explained, but the learner has not yet applied them. The integrated `add` command and its script/`-m` runs are not started. The missing-file message says "skipped" even though the JSON demo creates a new file; this is a wording cleanup.
-
-### Exact next action
-
-> Ask for available active-learning time. Start with one direct application of the `ArgumentParser` demo: identify the parsed values, run `--help` and a missing-argument case, and explain each exit status. Then build one guarded `add` command that saves and loads a task; run it by file path and `python -m`. Do not repeat the demonstrated module-guard check.
+- **Completed:** LG-07. Its `add TITLE` code and explanation meet the guide's mastery evidence.
+- **Open check:** Replay LG-06 with an invalid-UTF-8 temporary file before closing the data-boundary milestone. This does not reopen LG-06.
+- **Next action:** Run the LG-06 invalid-UTF-8 check, then begin LG-08 with `list` and `done` operations. Teach in short turns with a rule and working example before learner code; do not send a question and wait.
+- **Separate housekeeping:** `json/main.py` calls a missing file "skipped" although it creates one; `run_workspace/run_workspace.md` links to the wrong relative `main.py` path. These do not block LG-08.
 
 ## Adaptations
 
@@ -49,9 +51,12 @@
 - Keep the LG-04 note and direct-run exercise in `concepts/basics/functions/`; the learner does not plan to import that exercise.
 - LG-05 uses separate runnable collection files. The aggregate collection and values-and-names demos were removed at the learner's request; task-search code remains in `collections/list_type.py`. Its append already counted as add evidence, and `zip` was taught before quizzing it.
 - An LG-05 deferral from a separate session was recorded here by mistake. The learner clarified that this chat's LG-05 work was active; its evidence was retained and the unit was completed.
-- For LG-07, the learner has 2 hours available and prefers extra focus on saving and loading JSON.
+- During LG-07, the learner requested extra focus on saving and loading JSON.
 - The learner asked for basic knowledge before code or documentation and separate folders/files for JSON, modules, and CLI arguments. The premature integrated task-list scaffold and combined note were replaced by focused concept demos.
 - For CLI arguments, explain `ArgumentParser` creation, `add_argument`, and `parse_args` with a complete example before asking the learner to infer parsed values.
+- The learner requested a complete integrated example before any task-list implementation prompt. An analogous JSON-backed notes CLI was shown in conversation, and an empty `task_list/main.py` was prepared at the learner's request.
+- The learner pointed out that `choices` had not been taught before the task-list instructions used it. The CLI note and runnable demo now teach a two-value choice, its default, and the invalid-choice error before task-list use.
+- The learner requested short teaching turns without questions that leave the assistant waiting for a reply. Present the next concept and exact action directly, then continue when the learner returns.
 - Guide version 2 makes knowledge and mastery evidence explicit, pins Python documentation to 3.14, and treats the original three-day grouping as optional. Unit IDs and recorded completion evidence remain unchanged. Supply relevant documentation and ask for application rather than assigning a documentation search.
 
 ## Session log
@@ -95,3 +100,9 @@
 ### Session 10 — 2026-10-16
 
 - Planned: 60 minutes; actual active time: not reported. The learner fixed the malformed-JSON fallthrough; temporary-file checks confirmed the corrupt file is preserved and a missing file starts a task list. The learner correctly explained file-path and `-m` entry points and why an import skips guarded code. `ArgumentParser` basics were explained, but no CLI application answer or integrated `add` command was completed. The learner paused the session here.
+
+### Session 11 — 2026-10-17
+
+- Planned: 45 minutes initially, with a later 10-minute teaching window. Actual: about 2 hours active, excluding lunch. Session ended at the learner's request.
+- Covered `argparse` options, `choices`, parsed values, and exit statuses, with a complete JSON-backed CLI example before the exercise. The learner built `add_task(path, title)` and fixed malformed-JSON handling and help parsing order.
+- Temporary-copy checks passed imported use, file-path and `-m` persistence, help and error cases, corrupt-file preservation, and Ruff. LG-07 is complete. A separate LG-06 invalid-UTF-8 fixture check remains before the data-boundary milestone.
